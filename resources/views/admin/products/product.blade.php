@@ -25,6 +25,7 @@
                                 List Product
 
                                 <a href="{{ route('product.create') }}" class="btn btn-success waves-effect pull-right">Tambah</a>
+                                <a href="{{ route('product.saveBulk') }}" class="btn btn-danger waves-effect pull-right">Mass Upload</a>
                             </h4>
                         </div>
                         <div class="card-body">
