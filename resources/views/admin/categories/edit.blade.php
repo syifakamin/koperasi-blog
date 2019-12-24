@@ -26,7 +26,7 @@
                         <div class="card-body">
                             
                           	<!-- ROUTINGNYA MENGIRIMKAN ID CATEGORY YANG AKAN DIEDIT -->
-                            <form action="{{ route('category.update', $category['id']) }}" method="post">
+                            <form action="{{ route('category.update', $category->id) }}" method="post">
                                 @csrf
                                 @method('PUT')
                                  

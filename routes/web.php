@@ -29,5 +29,5 @@ Route::get('/register', function () {
 
     //INI ADALAH ROUTE BARU
     Route::resource('category', 'CategoryController')->except(['create', 'show']);
-    Route::resource('product', 'ProductController');
+    Route::resource('/product', 'ProductController');
  });

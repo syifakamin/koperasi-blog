@@ -27,14 +27,16 @@ class CategoryController extends Controller
         return redirect(route('category.index'))->with(['success' => 'Kategori Baru ditambahkan!']);
     }
 
+    //fungsi edit aman
     public function edit($id)
     {
         $category = Category::find($id);
-        
         $parent = Category::getParent()->orderBy('name', 'ASC')->get();
         return view ('admin.categories.edit', compact('category', 'parent'));
     }
 
+
+    //fungsi update aman
     public function update(Request $request, $id)
     {
         $this->validate($request, [

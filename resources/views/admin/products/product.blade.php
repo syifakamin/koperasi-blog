@@ -107,7 +107,6 @@
         </div>
     </div>
 </main>
-<?php print_r($row) ?>
 @endsection
 
 
