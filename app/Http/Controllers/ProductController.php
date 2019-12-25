@@ -97,4 +97,53 @@ class ProductController extends Controller
             return redirect()->back()->with(['success' => 'Upload Foto Terjadwalkan']);
         }
     }
+
+    public function edit ($id)
+    {
+        $product = Product::find($id);
+        $category = Category::orderBy('name', 'DESC')->get();
+        return view('admin.products.edit', compact('product', 'category'));
+    }
+
+    public function update (Request $request, $id)
+    {
+        //Validasi Data yang telah dikirim
+        $this->validate($request,[
+            'name' => 'required|string|max:100',
+            'description' => 'required',
+            'category_id' => 'required|exists:categories,id',
+            'price' => 'required|integer',
+            'weight' => 'required|integer',
+            'image' => 'nullable|image|mimes:png,jpeg,jpg' //Image bisa dibuat kosong dengan (nullable)
+
+        ]);
+
+        $product = Product::find($id); //Ambil data produk yang akan diedit berdasarkan ID
+        $filename = $product->image; //Simpan Sementara Nama file Image saat ini
+
+        //Jika ada file gambar dikirim
+        if ($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = time() . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
+            //Maka Upload File Tersebut
+            $file->storeAs('public/products', $filename);
+            //dan Hapus file gambar yang lama
+            File::delete(storage_path('app/public/products/'. $product->image));
+        }
+
+        //Kemudian update produk tersebut
+
+        $product->update([
+            'name' =>$request->name,
+            'description' => $request->description,
+            'category_id' => $request->category_id,
+            'price' => $request->price,
+            'weight' => $request->weight,
+            'image' => $filename
+
+
+        ]);
+        //Pesan yang diberikan sistem Ketika Status Sukses
+        return redirect(route('product.index'))->with(['success' => 'Data Produk Sukses Diperbaharui']);
+    }
 }
