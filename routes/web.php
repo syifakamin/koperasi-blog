@@ -30,5 +30,5 @@ Route::get('/register', function () {
     //INI ADALAH ROUTE BARU
     Route::resource('category', 'CategoryController')->except(['create', 'show']);
     Route::resource('/product', 'ProductController')->except(['show']);
-    Route::get('/product/bulk', 'ProductController@massUploadForm')->name('product.saveBulk');
+    Route::post('/product/bulk', 'ProductController@massUploadForm')->name('product.saveBulk');
  });
