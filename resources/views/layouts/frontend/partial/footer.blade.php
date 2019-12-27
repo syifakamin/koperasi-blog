@@ -3,7 +3,7 @@
 	<footer class="footer-area section_gap">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3  col-md-6 col-sm-6">
+				<div class="col-lg-3  col-md-6 col-sm-3">
 					<!-- Tentang Kami -->
 					<div class="single-footer-widget">
 						<h6>About Us</h6>
@@ -15,18 +15,12 @@
 				</div>
 
 				<!-- Panduan Kategori -->
-				<div class="col-lg-3  col-md-9 col-sm-9">
+				<div class="col-lg-3  col-md-9 col-sm-3">
   						<div class="footer-section">
-  						<h4 class="title"><b>CATAGORIES</b></h4>
+  						<h4 class="title"><b>SPECIAL PAGES</b></h4>
   						<ul>
-  							<li><a href="#">BEAUTY</a></li>
-  							<li><a href="#">HEALTH</a></li>
-  							<li><a href="#">MUSIC</a></li>
-  						</ul>
-  						<ul>
-  							<li><a href="#">SPORT</a></li>
-  							<li><a href="#">DESIGN</a></li>
-  							<li><a href="#">TRAVEL</a></li>
+  							<li><a href="{{ route('login') }}">ADMIN LOGIN</a></li>
+  							<li><a href="{{ route('register') }}">ADMIN REGISTER</a></li>
   						</ul>
   					</div><!-- footer-section -->
 				  </div><!-- col-lg-4 col-md-6 -->
