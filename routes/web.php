@@ -15,9 +15,14 @@
 //      return view('ecommerce.index');
 //  });
 
-
-Route::get('/', 'Ecommerce\FrontController@index')->name('front.index');
+Route::get('/product/{slug}', 'home\FrontController@show')->name('front.show_product');
+Route::get('/', 'home\FrontController@index')->name('front.index');
 Route::get('/product', 'Ecommerce\FrontController@product')->name('front.product');
+Route::get('/category/{slug}', 'home\FrontController@categoryProduct')->name('front.category');
+Route::post('cart', 'Ecommerce\CartController@addToCart')->name('front.cart');
+Route::get('/cart', 'Ecommerce\CartController@listCart')->name('front.list_cart');
+Route::get('/contact', 'Ecommerce\Contact@index')->name('front.contact');
+
 
 Route::get('/login', function () {
     return view('auth.login');

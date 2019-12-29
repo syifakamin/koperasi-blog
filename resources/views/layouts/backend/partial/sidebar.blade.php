@@ -10,7 +10,12 @@
             <div class="btn-group user-helper-dropdown">
                 <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ">keyboard_arrow_down</i>
                 <ul class="dropdown-menu pull-right">
+                    <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="_method" value="POST">
                     <li><a href="{{ route('logout') }}"><i class="material-icons">input</i>Sign Out</a></li>
+                    <button class="btn btn-primary waves-effect" type="submit" name="DELETE"><i class="material-icons" aria-hidden="true"></i>Sign Out</li>
+                    </form>
                 </ul>
             </div>
         </div>

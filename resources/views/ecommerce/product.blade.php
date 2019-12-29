@@ -30,29 +30,30 @@
 		<div class="row">
 			<div class="col-xl-3 col-lg-4 col-md-5">
 				<div class="sidebar-categories">
-					<div class="head">Browse Categories</div>
-					<ul class="main-categories">
-						<li class="main-nav-list"><a data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span
-								 class="lnr lnr-arrow-right"></span>Fruits and Vegetables<span class="number">(53)</span></a>
-							<ul class="collapse" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
+					<div class="head">Kategori Produk</div>
+                    <!-- proses buat wideget category -->
+                    <div class="main-nav-list">
+                        <ul class="main-categories">
+
+                        <!-- Proses Looping data Kategori -->
+                        @foreach ($categories as $category)
+                        <li class="main-nav-list">
+                            <!-- Jika ada child, maka kategori akan mengexpand data dibawah -->
+                            <a href="{{ $category->child_count > 0 ? '#':url('/category/' . $category->slug) }}">{{ $category->name }}</a>
+
+                            <!-- Proses looping data child kategori -->
+                            @foreach ($category->child as $child)
+                            <ul class="main-nav-list">
+                                <li class="main-nav-list">
+                                    <a href="{{ url('/category/' . $child->slug) }}">{{$child->name }}</a>
+                                </li>
+                            </ul>
+                            @endforeach
                         </li>
-                        <li class="main-nav-list"><a data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span
-								 class="lnr lnr-arrow-right"></span>Fruits and Vegetables<span class="number">(53)</span></a>
-							<ul class="collapse" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-					</ul>
+                        @endforeach
+                        </ul>
+                    </div>
+
 				</div>
 			</div>
 			<div class="col-xl-9 col-lg-8 col-md-7">
@@ -101,7 +102,12 @@
                                 </div>
                             </div>
                         
-                        @empty
+						@empty
+
+						<div class="col-md-12">
+						<h3 class="text-center">Tidak ada produk</h3>
+						</div>
+
                         <!-- Proses Looping data product, sama dengan code yang ada di halaman -->
                         </div>
                         @endforelse

@@ -18,20 +18,20 @@
 						<ul class="nav navbar-nav menu_nav ml-auto">
 							<li class="nav-item"><a class="nav-link" href="{{ route('front.index') }}">Halaman Utama</a></li>
 							<li class="nav-item"><a class="nav-link" href="{{ route('front.product') }}">Produk</a></li>
-							<li class="nav-item"><li class="nav-item"><a class="nav-link" href="category.html">Hubungi Kami</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ route('front.list_cart') }}"> belanjaMu </a></li>
+							<li class="nav-item"><li class="nav-item"><a class="nav-link" href="{{ route('front.contact') }}">Hubungi Kami</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</div>
-		<div class="search_input" id="search_input_box">
-			<div class="container">
-				<form class="d-flex justify-content-between">
-					<input type="text" class="form-control" id="search_input" placeholder="Search Here">
-					<button type="submit" class="btn"></button>
-					<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-				</form>
-			</div>
-		</div>
 	</header>
 	<!-- End Header Area -->
+
+	@push('js')
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="{{ asset('assets/frontend/js/gmaps.min.js')}}"></script>
+	<script src="{{ asset('assets/frontend/js/main.js')}}"></script>
+
+@endpush
