@@ -21,6 +21,7 @@ Route::get('/product', 'Ecommerce\FrontController@product')->name('front.product
 Route::get('/category/{slug}', 'home\FrontController@categoryProduct')->name('front.category');
 Route::post('cart', 'Ecommerce\CartController@addToCart')->name('front.cart');
 Route::get('/cart', 'Ecommerce\CartController@listCart')->name('front.list_cart');
+Route::post('/cart/update', 'Ecommerce\CartController@updateCart')->name('front.update_cart');
 Route::get('/contact', 'Ecommerce\Contact@index')->name('front.contact');
 
 

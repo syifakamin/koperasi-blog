@@ -50,4 +50,18 @@ class CartController extends Controller
         $carts = $carts != '' ? $carts:[];
         return $carts;
     }
+
+    public function updateCart(Request $request)
+    {
+        $carts = json_decode(request()->cookie('koperasi-blog'), true);
+        foreach ($request->product_id as $key => $row) {
+            if ($request->qty[$key] == 0){
+                unset($carts[$row]);
+            }else{
+                $carts[$row]['qty'] = $request->qty[$key];
+            }
+        }
+        $cookie = cookie('koperasi-blog', json_encode($carts), 2880);
+        return redirect()->back()->cookie($cookie);
+    }
 }
