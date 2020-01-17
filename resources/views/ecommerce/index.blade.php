@@ -23,8 +23,7 @@
 							<div class="col-lg-5 col-md-6">
 								<div class="banner-content">
 									<h1><br>Bebas pilih menu <br>Sesukamu!</h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+									<p>Berbagai menu dengan lauk melimpah yang cocok untuk acara makan bersama.</p>
 								</div>
 							</div>
 							<div class="col-lg-5">
@@ -38,8 +37,7 @@
 							<div class="col-lg-5">
 								<div class="banner-content">
 									<h1><br>Kita buat dari<br>Bahan Segar!</h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+									<p>Berbagai menu dengan lauk melimpah yang cocok untuk acara makan bersama.</p>
 								</div>
 							</div>
 							<div class="col-lg-7">
@@ -66,9 +64,7 @@
 					<div class="col-lg-6 text-center">
 						<div class="section-title">
 							<h1>Produk Terbaru Kami</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore
-								magna aliqua.</p>
+							<p>Berbagai menu dengan lauk melimpah yang cocok untuk acara makan bersama.</p>
 						</div>
 					</div>
 				</div>

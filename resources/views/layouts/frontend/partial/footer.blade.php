@@ -6,10 +6,9 @@
 				<div class="col-lg-3  col-md-6 col-sm-3">
 					<!-- Tentang Kami -->
 					<div class="single-footer-widget">
-						<h6>About Us</h6>
+						<h6>Tentang Kami</h6>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
-							magna aliqua.
+						Universitas Muhammadiyah Gresik, Gresik Jl. Sumatera No.101, Setingi, Randuagung, Kec. Gresik
 						</p>
 					</div>
 				</div>

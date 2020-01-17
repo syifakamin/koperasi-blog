@@ -24,7 +24,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Pelanggan</div>
-                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                    <div class="number"> 0 </div>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Produk</div>
-                    <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                    <div class="number"> 10 </div>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Kategori</div>
-                    <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                    <div class="number"> 6 </div>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Pengunjung</div>
-                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                    <div class="number"> 23 </div>
                 </div>
             </div>
         </div>

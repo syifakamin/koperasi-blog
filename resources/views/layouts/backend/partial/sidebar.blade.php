@@ -5,8 +5,8 @@
             <img src="{{ asset('assets/backend/images/user.png') }}" width="48" height="48" alt="User" />    
         </div>
         <div class="info-container">
-            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ">John Doe </div>
-            <div class="email">labanana1322@gmail.com</div>
+            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ">Administrator </div>
+            <div class="email">Koperasi Karyawan UMG</div>
             <div class="btn-group user-helper-dropdown">
                 <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ">keyboard_arrow_down</i>
                 <ul class="dropdown-menu pull-right">
@@ -37,10 +37,6 @@
                 </a>
             </li>
             <li>
-                <a href="pages/typography.html">
-                    <i class="material-icons">widgets</i>
-                    <span>Pengaturan Toko</span>
-                </a>
                 <a class="nav-link" href="{{ route('product.index')}}">
                     <i class="material-icons">collections</i>
                     <span> Produk </span>
@@ -52,10 +48,10 @@
     <!-- Footer -->
     <div class="legal">
         <div class="copyright">
-            &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+            &copy; 2019 <a href="{{route ('front.index') }}">Sistem Informasi Catering</a>.
         </div>
         <div class="version">
-            <b>Version: </b> 1.0.5
+            <b>Version: </b> 1.0.0
         </div>
     </div>
     <!-- #Footer -->
