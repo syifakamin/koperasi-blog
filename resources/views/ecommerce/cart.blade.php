@@ -47,7 +47,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <!-- Looping data dari variable carts -->
+						<!-- Looping data dari variable carts -->
+						@if(! empty($carts))
                         @forelse ($carts as $row)
                             <tr>
                                 <td>
@@ -65,14 +66,10 @@
                                 </td>
                                 <td>
                                     <div class="product_count">
-                                        
-                    
                     <!-- PERHATIKAN BAGIAN INI, NAMENYA KITA GUNAKAN ARRAY AGAR BISA MENYIMPAN LEBIH DARI 1 DATA -->
-                     <input type="text" name="qty[]" id="sst{{ $row['product_id'] }}" maxlength="12" value="{{ $row['qty'] }}" title="Quantity:" class="input-text qty">
+                     					<input type="text" name="qty[]" id="sst{{ $row['product_id'] }}" maxlength="12" value="{{ $row['qty'] }}" title="Quantity:" class="input-text qty">
                                         <input type="hidden" name="product_id[]" value="{{ $row['product_id'] }}" class="form-control"> 
                     <!-- PERHATIKAN BAGIAN INI, NAMENYA KITA GUNAKAN ARRAY AGAR BISA MENYIMPAN LEBIH DARI 1 DATA -->
-                    
-                    
 										<button onclick="var result = document.getElementById('sst{{ $row['product_id'] }}'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 										 class="increase items-count" type="button">
 											<i class="lnr lnr-chevron-up"></i>
@@ -86,12 +83,13 @@
 								<td>
                                     <h5>Rp {{ number_format($row['product_price'] * $row['qty']) }}</h5>
 								</td>
-                            </tr>
-                            @empty
+							</tr>
+							@empty
                             <tr>
                                 <td colspan="4">Tidak ada belanjaan</td>
                             </tr>
-                            @endforelse
+							@endforelse
+							@endif
 							<tr class="bottom_button">
 								<td>
 									<button class="btn btn-primary waves-effect">Update Cart</button>
