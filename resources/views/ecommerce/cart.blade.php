@@ -160,7 +160,7 @@
 								<td>
 									<div class="checkout_btn_inner">
 										<a class="btn btn-secondary waves-effect" href="{{ route('front.product') }}">Continue Shopping</a>
-										<a class="btn btn-success waves-effect" href="#">Proceed to checkout</a>
+										<a class="btn btn-success waves-effect" href="{{ route('front.checkout') }}">Proceed to checkout</a>
 									</div>
 								</td>
 							</tr>

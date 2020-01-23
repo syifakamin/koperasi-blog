@@ -23,6 +23,11 @@ Route::post('cart', 'Ecommerce\CartController@addToCart')->name('front.cart');
 Route::get('/cart', 'Ecommerce\CartController@listCart')->name('front.list_cart');
 Route::post('/cart/update', 'Ecommerce\CartController@updateCart')->name('front.update_cart');
 Route::get('/contact', 'Ecommerce\Contact@index')->name('front.contact');
+Route::get('/checkout', 'Ecommerce\CartController@checkout')->name('front.checkout');
+Route::get('api/city', 'Ecommerce\CartController@getCity');
+Route::get('api/district', 'Ecommerce\cartController@getDistrict');
+route::post('/checkout', 'Ecommerce\CartController@prosessCheckout')->name('front.store_checkout');
+Route::get('/checkout/{invoice}', 'Ecommerce\CartController@checkoutFinish')->name('front.finish_checkout');
 
 
 Route::get('/login', function () {
