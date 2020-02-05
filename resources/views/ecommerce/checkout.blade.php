@@ -38,7 +38,7 @@
                     <div class="alert alert-danger">{{ session('error') }}</div>
                     @endif
 
-                    <form class="row contact_form" action="{{ route('front.checkout') }}" method="post" novalidate="novalidate">
+                    <form class="row contact_form" action="{{ route('front.store_checkout') }}" method="post" novalidate="novalidate">
                         @csrf
                         <div class="col-md-12 form-group p_star">
                             <label for="">Nama Lengkap</label>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="col-md-12 form-group p_star">
                             <label for="">Propinsi</label>
-                            <select type="country_select" style="display: none;" class="form-control province_id" id="province_id" >
+                            <select type="form-control" class="form-control province_id" name="province_id" id="province_id" >
                                 <option value="">Pilih Propinsi</option>
                                 @foreach ($provinces as $row)
                                 <option value="{{ $row->id }}">{{ $row->name }}</option>
@@ -74,82 +74,84 @@
                         </div>
                         <div class="col-md-12 form-group p_star">
                             <label for="">Kabupaten / kota</label>
-                            <select type="form-control" class="city_id" id="city_id">
+                            <select type="form-control" class="city_id" name="city_id" id="city_id">
                                 <option value="">Pilih Kabupaten/kota</option>
                             </select>
                             <p class="text-danger">{{ $errors->first('city_id')}}</p>
                         </div>
                         <div class="col-md-12 form-group p_star">
                             <label for="">Kecamatan</label>
-                            <select type="form-control" class="district_id" id="district_id" >
+                            <select type="form-control" class="district_id" name="district_id" id="district_id" >
                                 <option value="">Pilih Kecamatan</option>
                             </select>
                             <p class="text-danger">{{ $errors->first('district_id')}}</p>
                         </div>
 </div>
-                <div class="col-lg-4">
-                    <div class="order_box">
-                        <h2>Ringkasan Pesanan</h2>
-                        <ul class="list">
-                            <li>
-                                <a href="#">Produk
-                                    <span>Total</span>
-                                </a>
-                            </li>
-                            @foreach ($carts as $cart)
-                            <li>
-                                <a href="#">{{ \Str::limit($cart['product_name'], 10) }}
-                                    <span class="middle">x {{$cart['qty']}}</span>
-                                    <span class="last"> Rp {{number_format($cart['product_price']) }}</span>
-                                </a>
-                            </li>
-                            @endforeach
-                        </ul>
-                        <ul class="list list_2">
-                            <li>
-                                <a href="#">Subtotal
-                                    <span> Rp {{ number_format($subtotal) }}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">Pengiriman
-                                    <span> Rp 0</span>
-                                </a>
-                            </li>       
-                            <li>
-                                <a href="#">total
-                                    <span> Rp {{ number_format($subtotal) }}</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <button class="btn-primary">Bayar Pesanan</button>
-                                        </form>
+                            <div class="col-lg-4">
+                                <div class="order_box">
+                                    <h2>Ringkasan Pesanan</h2>
+                                    <ul class="list">
+                                        <li>
+                                            <a href="#">Produk
+                                                <span>Total</span>
+                                            </a>
+                                        </li>
+                                        @foreach ($carts as $cart)
+                                        <li>
+                                            <a href="#">{{ \Str::limit($cart['product_name'], 10) }}
+                                                <span class="middle">x {{$cart['qty']}}</span>
+                                                <span class="last"> Rp {{number_format($cart['product_price']) }}</span>
+                                            </a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                    <ul class="list list_2">
+                                        <li>
+                                            <a href="#">Subtotal
+                                                <span> Rp {{ number_format($subtotal) }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Pengiriman
+                                                <span> Rp 0</span>
+                                            </a>
+                                        </li>       
+                                        <li>
+                                            <a href="#">total
+                                                <span> Rp {{ number_format($subtotal) }}</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <button class="btn-primary">Bayar Pesanan</button>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                        </form>
 </section>
 
 @endsection
 
 @section('javascript')
+
 <script>
-        
-        $('#province_id').on('change', function() {
-            
+       $('#province_id').on('change', function() {
+            //MAKA AKAN MELAKUKAN REQUEST KE URL /API/CITY
+            //DAN MENGIRIMKAN DATA PROVINCE_ID
             $.ajax({
                 url: "{{ url('/api/city') }}",
                 type: "GET",
                 data: { province_id: $(this).val() },
                 success: function(html){
-                    console.log(html)
-                    $('#city_id').empty()
-                   
-                    $('#city_id').append('<option value="">Pilih Kabupaten/Kota</option>')
+                    //SETELAH DATA DITERIMA, SELEBOX DENGAN ID CITY_ID DI KOSONGKAN
+                    $('.city_id').empty()
+                    //KEMUDIAN APPEND DATA BARU YANG DIDAPATKAN DARI HASIL REQUEST VIA AJAX
+                    //UNTUK MENAMPILKAN DATA KABUPATEN / KOTA
+                    $('.city_id').append('<option value="">Pilih Kabupaten/Kota</option>')
                     $.each(html.data, function(key, item) {
-                        $('#city_id').append('<option value="'+item.id+'">'+item.name+'</option>')
-                        console.log(html)
+                        $('.city_id').append('<option value="'+item.id+'">'+item.name+'</option>')
                     })
                 }
             });
@@ -161,7 +163,6 @@
                 type: "GET",
                 data: { city_id: $(this).val() },
                 success: function(html){
-                    console.log(html)
                     $('#district_id').empty()
                     $('#district_id').append('<option value="">Pilih Kecamatan</option>')
                     $.each(html.data, function(key, item) {
@@ -171,6 +172,7 @@
             });
         })
     </script>
+
 @endsection
 
 @push('js')

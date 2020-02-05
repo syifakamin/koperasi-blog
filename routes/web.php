@@ -14,7 +14,7 @@
 //  Route::get('/', function () {
 //      return view('ecommerce.index');
 //  });
-
+Route::get('/checkout/{invoice}', 'Ecommerce\CartController@checkoutFinish')->name('front.finish_checkout'); 
 Route::get('/product/{slug}', 'home\FrontController@show')->name('front.show_product');
 Route::get('/', 'home\FrontController@index')->name('front.index');
 Route::get('/product', 'Ecommerce\FrontController@product')->name('front.product');
@@ -26,8 +26,8 @@ Route::get('/contact', 'Ecommerce\Contact@index')->name('front.contact');
 Route::get('/checkout', 'Ecommerce\CartController@checkout')->name('front.checkout');
 Route::get('api/city', 'Ecommerce\CartController@getCity');
 Route::get('api/district', 'Ecommerce\cartController@getDistrict');
-route::post('/checkout', 'Ecommerce\CartController@prosessCheckout')->name('front.store_checkout');
-Route::get('/checkout/{invoice}', 'Ecommerce\CartController@checkoutFinish')->name('front.finish_checkout');
+route::post('/checkout', 'Ecommerce\CartController@prosesCheckout')->name('front.store_checkout');
+
 
 
 Route::get('/login', function () {

@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 
-@section('title','Koperasi Karyawan UMG')
+@section('title','KeranjangMu')
 
 @push('css')
       <link href="{{ asset('assets/frontend/css/home/styles.css')}}" rel="stylesheet">
@@ -16,10 +16,10 @@
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
-					<h3>Keranjang Belanja</h3>
+					<h3>Pesanan Diterima</h3>
 					<nav class="d-flex align-items-center page_link">
 						<a href="{{ url ('/') }}">Halaman<span class="lnr lnr-arrow-right"></span></a>
-						<a href="#">Keranjang Belanja</a>
+						<a href="#">Invoice</a>
 					</nav>
 				</div>
 			</div>

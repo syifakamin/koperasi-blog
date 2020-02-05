@@ -31,7 +31,6 @@
           <link rel="stylesheet" href="{{ asset('assets/frontend/css/themify-icons.css')}}">
           <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.css')}}">
           <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.carousel.css')}}">
-          <link rel="stylesheet" href="{{ asset('assets/frontend/css/nice-select.css')}}">
           <link rel="stylesheet" href="{{ asset('assets/frontend/css/nouislider.min.css')}}">
           <link rel="stylesheet" href="{{ asset('assets/frontend/css/ion.rangeSlider.css')}}" />
           <link rel="stylesheet" href="{{ asset('assets/frontend/css/ion.rangeSlider.skinFlat.css')}}" />
@@ -49,7 +48,18 @@
 
     @include('layouts.frontend.partial.footer')
 
-    <!-- SCIPTS -->
+	<!-- SCIPTS -->
+	<!-- new -->
+	<script src="{{ asset('assets/frontend/js/jquery-3.2.1.min.js') }}"></script>
+	<script src="{{ asset('assets/frontend/js/popper.js') }}"></script>
+	<script src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('assets/frontend/js/stellar.js') }}"></script>
+	<script src="{{ asset('assets/frontend/js/jquery.ajaxchimp.min.js') }}"></script>
+	<script src="{{ asset('assets/frontend/js/mail-script.js') }}"></script>
+	<script src="{{ asset('assets/frontend/js/theme.js') }}"></script>
+
+	<!-- end new  -->
+
 
   	<script src="{{ asset('assets/frontend/js/jquery-3.1.1.min.js')}}"></script>
 
@@ -66,7 +76,6 @@
 	 crossorigin="anonymous"></script>
 	<script src="{{ asset('assets/frontend/js/vendor/bootstrap.min.js')}}"></script>
 	<script src="{{ asset('assets/frontend/js/jquery.ajaxchimp.min.js')}}"></script>
-	<script src="{{ asset('assets/frontend/js/jquery.nice-select.min.js')}}"></script>
 	<script src="{{ asset('assets/frontend/js/jquery.sticky.js')}}"></script>
 	<script src="{{ asset('assets/frontend/js/nouislider.min.js')}}"></script>
 	<script src="{{ asset('assets/frontend/js/countdown.js')}}"></script>

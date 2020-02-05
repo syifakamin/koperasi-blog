@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Ecommerce;
 
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\Province;
@@ -11,7 +12,6 @@ use App\Customer;
 use App\Order;
 use App\OrderDetail;
 use Illuminate\Support\Str;
-use DB;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -98,16 +98,20 @@ class CartController extends Controller
         return response()->json(['status' => 'success', 'data' => $districts]);
     }
 
-    public function prosessCheckout(Request $request)
+    public function prosesCheckout(Request $request)
     {
         $this->validate($request, [
             'customer_name' => 'required|string|max:100',
             'customer_phone' => 'required',
             'email' => 'required|email',
-            'customer_address' => ''
+            'customer_address' => 'required|string',
+            'province_id' => 'required|exists:provinces,id',
+            'city_id' => 'required|exists:cities,id',
+            'district_id' => 'required|exists:districts,id'
         ]);
 
         DB::beginTransaction();
+
         try{
             $customer = Customer::where('email', $request->email)->first();
             if (!auth()->check() && $customer){
@@ -141,7 +145,7 @@ class CartController extends Controller
 
             foreach ($carts as $row) {
                 $product = Product::find($row['product_id']);
-                orderDetail::create([
+                OrderDetail::create([
                     'order_id' => $order->id,
                     'product_id' => $row['product_id'],
                     'price' => $row['product_price'],
@@ -150,13 +154,13 @@ class CartController extends Controller
                 ]);
             }
 
-            DB:commit();
+            DB::commit();
 
             $carts = [];
 
             $cookie = cookie('koperasi-blog', json_encode($carts), 2880);
 
-            return redirect (route('front.finish.checkout', $order->invoice))->cookie($cookie);
+            return redirect (route('front.finish_checkout', $order->invoice))->cookie($cookie);
         } catch (\Exception $e) {
             DB::rollback();
 
@@ -169,5 +173,5 @@ class CartController extends Controller
     {
         $order = Order::with(['district.city'])->where('invoice', $invoice)->first();
         return view('ecommerce.checkout_finish', compact('order'));
-    }
+    } 
 }
