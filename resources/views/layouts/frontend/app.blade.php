@@ -35,7 +35,8 @@
           <link rel="stylesheet" href="{{ asset('assets/frontend/css/ion.rangeSlider.css')}}" />
           <link rel="stylesheet" href="{{ asset('assets/frontend/css/ion.rangeSlider.skinFlat.css')}}" />
           <link rel="stylesheet" href="{{ asset('assets/frontend/css/magnific-popup.css')}}">
-          <link rel="stylesheet" href="{{ asset('assets/frontend/css/main.css')}}">
+		  <link rel="stylesheet" href="{{ asset('assets/frontend/css/main.css')}}">
+		  <link rel="stylesheet" href="{{ asset('assets/frontend/css/nice-select.css')}}">
   	
     @stack('css')
     
@@ -85,6 +86,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="{{ asset('assets/frontend/js/gmaps.min.js')}}"></script>
 	<script src="{{ asset('assets/frontend/js/main.js')}}"></script>
+	<script src="{{ asset('assets/frontend/js/jquery.nice-select.min.js')}}"></script>
 	@stack('js')
 	
 	@yield('javascript')

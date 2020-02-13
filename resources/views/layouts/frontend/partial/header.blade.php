@@ -19,6 +19,12 @@
 							<li class="nav-item"><a class="nav-link" href="{{ route('front.index') }}">Halaman Utama</a></li>
 							<li class="nav-item"><a class="nav-link" href="{{ route('front.product') }}">Produk</a></li>
 							<li class="nav-item"><a class="nav-link" href="{{ route('front.list_cart') }}"> belanjaMu </a></li>
+							@if (auth()->guard('customer')->check())
+							<li class="nav-item"><a class="nav-link" href="{{ route ('customer.logout') }}">logout</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">My Account</a></li>
+							@else
+							<li class="nav-item"><a class="nav-link" href="{{ route('customer.login') }}"> Login Customer </a></li>
+							@endif
 							<li class="nav-item"><li class="nav-item"><a class="nav-link" href="{{ route('front.contact') }}">Hubungi Kami</a></li>
 						</ul>
 					</div>

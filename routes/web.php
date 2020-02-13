@@ -40,6 +40,9 @@ Route::get('/register', function () {
 
 
  Auth::routes();
+ 
+
+//Group Route untuk Administrator
  Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function() {
     Route::get('home', 'HomeController@index')->name('home'); //JADI ROUTING INI SUDAH ADA DARI ARTIKEL SEBELUMNYA TAPI KITA PINDAHKAN KEDALAM GROUPING
 
@@ -49,3 +52,18 @@ Route::get('/register', function () {
     Route::get('product/bulk', 'ProductController@massUploadForm')->name('product.saveBulk');
     
  });
+
+
+//Group Route untuk Member / Customer
+ Route::group(['prefix' => 'member', 'namespace' => 'Ecommerce'], function(){
+     Route::get('login', 'LoginController@loginForm')->name('customer.login');
+     Route::get('verify/{token}', 'FrontController@verifyCustomerRegistration')->name('customer.verify');
+     Route::post('login', 'LoginController@login')->name('customer.post_login');
+});
+
+
+//Group Route untuk Middleware
+Route::group(['middleware' => 'customer'], function() {
+    Route::get('dashboard', 'LoginController@dashboard')->name('customer.dashboard');
+    Route::get('logout', 'loginController@logout')->name('customer.logout');
+});

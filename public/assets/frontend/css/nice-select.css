@@ -1,4 +1,4 @@
-.nice-select {
+/* .nice-select {
   -webkit-tap-highlight-color: transparent;
   background-color: #fff;
   border-radius: 5px;
@@ -29,8 +29,8 @@
   .nice-select:hover {
     border-color: #dbdbdb; }
   .nice-select:active, .nice-select.open, .nice-select:focus {
-    border-color: #999; }
-  .nice-select:after {
+    border-color: #999; } */
+  /* .nice-select:after {
     border-bottom: 2px solid #999;
     border-right: 2px solid #999;
     content: '';
@@ -59,7 +59,7 @@
     pointer-events: auto;
     -webkit-transform: scale(1) translateY(0);
         -ms-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0); }
+            transform: scale(1) translateY(0); } */
   .nice-select.disabled {
     border-color: #ededed;
     color: #999;
@@ -118,7 +118,7 @@
     min-height: 40px;
     outline: none;
     padding-left: 18px;
-    padding-right: 29px;
+    padding-right: 29px; 
     text-align: left;
     -webkit-transition: all 0.2s;
     transition: all 0.2s; }

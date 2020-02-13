@@ -9,10 +9,12 @@ use App\Province;
 use App\City;
 use App\District;
 use App\Customer;
+use App\Mail\CustomerRegisterMail;
 use App\Order;
 use App\OrderDetail;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Mail;
 
 class CartController extends Controller
 {
@@ -73,14 +75,11 @@ class CartController extends Controller
 
     public function checkout()
     {
-    //QUERY UNTUK MENGAMBIL SEMUA DATA PROPINSI
     $provinces = Province::orderBy('created_at', 'DESC')->get();
-    $carts = $this->getCarts(); //MENGAMBIL DATA CART
-    //MENGHITUNG SUBTOTAL DARI KERANJANG BELANJA (CART)
+    $carts = $this->getCarts(); 
     $subtotal = collect($carts)->sum(function($q) {
         return $q['qty'] * $q['product_price'];
     });
-    //ME-LOAD VIEW CHECKOUT.BLADE.PHP DAN PASSING DATA PROVINCES, CARTS DAN SUBTOTAL
     return view('ecommerce.checkout', compact('provinces','carts', 'subtotal'));
     }
 
@@ -124,12 +123,15 @@ class CartController extends Controller
                 return $q['qty'] * $q['product_price'];
             });
 
+            $password = Str::random(8);
             $customer = Customer::create([
                 'name' => $request->customer_name,
                 'email' => $request->email,
+                'password' => $password,
                 'phone_number' => $request->customer_phone,
                 'address' => $request->customer_address,
                 'district_id' => $request->district_id,
+                'activate_token' => Str::random(30),
                 'status' => false
             ]);
 
@@ -159,7 +161,7 @@ class CartController extends Controller
             $carts = [];
 
             $cookie = cookie('koperasi-blog', json_encode($carts), 2880);
-
+            Mail::to($request->email)->send(new CustomerRegisterMail($customer, $password));
             return redirect (route('front.finish_checkout', $order->invoice))->cookie($cookie);
         } catch (\Exception $e) {
             DB::rollback();
@@ -174,4 +176,22 @@ class CartController extends Controller
         $order = Order::with(['district.city'])->where('invoice', $invoice)->first();
         return view('ecommerce.checkout_finish', compact('order'));
     } 
+
+    public function verifyCustomerRegistration($token)
+    {
+        $customer = Customer::where('activate_token', $token)->first();
+        if ($customer) {
+            $customer->update([
+                'activate_token' => null,
+                'status' => 1
+            ]);
+
+            return redirect(route('customer.login'))->with(['success' => 'Verifikasi Berhasil, Silahkan Login']);
+
+        }
+
+        return redirect(route('customer.login'))->with(['error' => 'Invalid Verifikasi Token']);
+    }
+
+
 }
