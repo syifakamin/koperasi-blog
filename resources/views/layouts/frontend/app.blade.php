@@ -16,6 +16,21 @@
 	<meta charset="UTF-8">
 	<!-- Site Title -->
 
+	<style>
+	.menu-sidebar-area {
+		list-style-type:none; padding-left: 0; font-size: 15pt;
+	}
+	.menu-sidebar-area > li {
+		margin:0 0 10px 0;
+		list-style-position:inside;
+		border-bottom: 1px solid black;
+	}
+	.menu-sidebar-area > li > a {
+		color: black
+	}
+	</style>
+	@yield('css')
+
     <title>@yield('title') - {{ config('app.name', 'Laravel') }}</title>
     <!-- Font -->
 
