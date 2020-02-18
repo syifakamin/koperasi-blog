@@ -21,7 +21,7 @@
 							<li class="nav-item"><a class="nav-link" href="{{ route('front.list_cart') }}"> belanjaMu </a></li>
 							@if (auth()->guard('customer')->check())
 							<li class="nav-item"><a class="nav-link" href="{{ route ('customer.logout') }}">logout</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">My Account</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ route('customer.dashboard') }}">My Account</a></li>
 							@else
 							<li class="nav-item"><a class="nav-link" href="{{ route('customer.login') }}"> Login Customer </a></li>
 							@endif

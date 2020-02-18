@@ -22,7 +22,10 @@ class OrderController extends Controller
         $order = Order::with(['district.city.province', 'details', 'details.product', 'payment'])
         ->where('invoice', $invoice)->first();
 
-        return view('ecommerce.orders.view', compact('order'));
+        if (\Gate::forUser(auth()->guard('customer')->user())->allows('order-view', $order)){
+            return view('ecommerce.orders.view', compact('order'));
+        }
+
     }
 
     public function paymentForm()
@@ -47,6 +50,7 @@ class OrderController extends Controller
             //AMBIL DATA ORDER BERDASARKAN INVOICE ID
             $order = Order::where('invoice', $request->invoice)->first();
             //JIKA STATUSNYA MASIH 0 DAN ADA FILE BUKTI TRANSFER YANG DI KIRIM
+            if ($order->subtotal != $request->amount) return redirect()->back()->with(['error' => 'Error, Pembayaran Harus Sama Dengan Tagihan']);
             if ($order->status == 0 && $request->hasFile('proof')) {
                 //MAKA UPLOAD FILE GAMBAR TERSEBUT
                 $file = $request->file('proof');
