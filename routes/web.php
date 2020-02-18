@@ -67,9 +67,10 @@ Route::group(['middleware' => 'customer'], function() {
     Route::get('dashboard', 'LoginController@dashboard')->name('customer.dashboard');
     Route::get('logout', 'loginController@logout')->name('customer.logout');
     Route::get('orders', 'OrderController@index')->name('customer.orders');
-    Route::get('orders/{invoice}', 'OrderController@view')->name('customer.view_order');
+    Route::get('orders/pdf/{invoice}', 'OrderController@view')->name('customer.order_pdf');
     Route::get('payment', 'OrderController@paymentForm')->name('customer.paymentForm');
     Route::post('payment', 'OrderController@storePayment')->name('customer.savePayment');
     Route::get('setting', 'FrontController@customerSettingForm')->name('customer.settingForm');
     Route::post('setting', 'FrontController@customerUpdateProfile')->name('customer.setting');
+    
 });
