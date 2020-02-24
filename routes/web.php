@@ -74,3 +74,12 @@ Route::group(['middleware' => 'customer'], function() {
     Route::post('setting', 'FrontController@customerUpdateProfile')->name('customer.setting');
     
 });
+
+Route::Group(['prefix' => 'orders'], function(){
+    Route::get('/', 'OrderController@index')->name('orders.index');
+    Route::delete('/{id}', 'OrderController@destroy')->name('orders.destroy');
+    Route::get('/{invoice}', 'OrderController@view');
+});
+
+Route::get('/payment/{invoice}', 'OrderController@acceptPayment')->name('orders.approve_payment');
+Route::post('/shipping', 'OrderController@shippingOrder')->name('orders.shipping');

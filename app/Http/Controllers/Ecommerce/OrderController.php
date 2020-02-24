@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\Payment;
 use Carbon\Carbon;
+use App\Mail\OrderMail;
+use Mail;
 use DB;
 use PDF;
 
@@ -97,5 +99,12 @@ class OrderController extends Controller
         $pdf = PDF::loadView('ecommerce.orders.pdf', compact('order'));
         return $pdf->stream();
     }
-    
+ 
+    public function shippingOrder(Request $request)
+    {
+        $order = Order::with(['customer'])->find($request->order_id);
+        $order->update(['tracking_number' => $request->tracking_number, 'status' => 3]);
+        Mail::to($order->customer->email)->send(new OrderMail($order));
+        return redirect()->back();
+    }
 }
