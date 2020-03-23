@@ -1,0 +1,129 @@
+[2020-02-15 13:26:13] local.ERROR: Command "megrate" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"megrate\" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status at C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\symfony\\console\\Application.php:660)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\symfony\\console\\Application.php(237): Symfony\\Component\\Console\\Application->find('megrate')
+#1 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\symfony\\console\\Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\xampp\\htdocs\\Koperasi-Blog\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2020-02-15 15:10:06] local.ERROR: Call to undefined method Symfony\Component\Routing\Route::get() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined method Symfony\\Component\\Routing\\Route::get() at C:\\xampp\\htdocs\\Koperasi-Blog\outes\\web.php:20)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteFileRegistrar.php(35): require()
+#1 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(415): Illuminate\\Routing\\RouteFileRegistrar->register('C:\\\\xampp\\\\htdocs...')
+#2 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(373): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
+#3 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
+#4 C:\\xampp\\htdocs\\Koperasi-Blog\\app\\Providers\\RouteServiceProvider.php(56): Illuminate\\Routing\\RouteRegistrar->group('C:\\\\xampp\\\\htdocs...')
+#5 C:\\xampp\\htdocs\\Koperasi-Blog\\app\\Providers\\RouteServiceProvider.php(40): App\\Providers\\RouteServiceProvider->mapWebRoutes()
+#6 [internal function]: App\\Providers\\RouteServiceProvider->map()
+#7 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#8 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(520): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#9 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): value(Object(Closure))
+#10 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(591): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(87): Illuminate\\Container\\Container->call(Array)
+#13 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#14 C:\\xampp\\htdocs\\Koperasi-Blog\\app\\Providers\\RouteServiceProvider.php(28): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#15 [internal function]: App\\Providers\\RouteServiceProvider->boot()
+#16 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#17 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(520): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): value(Object(Closure))
+#19 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(591): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(828): Illuminate\\Container\\Container->call(Array)
+#22 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(811): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#23 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 24)
+#24 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(812): array_walk(Array, Object(Closure))
+#25 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#26 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#27 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#28 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#29 C:\\xampp\\htdocs\\Koperasi-Blog\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 {main}
+"} 
+[2020-02-15 15:11:06] local.ERROR: Call to undefined method Symfony\Component\Routing\Route::get() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined method Symfony\\Component\\Routing\\Route::get() at C:\\xampp\\htdocs\\Koperasi-Blog\outes\\web.php:20)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteFileRegistrar.php(35): require()
+#1 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(415): Illuminate\\Routing\\RouteFileRegistrar->register('C:\\\\xampp\\\\htdocs...')
+#2 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(373): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
+#3 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
+#4 C:\\xampp\\htdocs\\Koperasi-Blog\\app\\Providers\\RouteServiceProvider.php(56): Illuminate\\Routing\\RouteRegistrar->group('C:\\\\xampp\\\\htdocs...')
+#5 C:\\xampp\\htdocs\\Koperasi-Blog\\app\\Providers\\RouteServiceProvider.php(40): App\\Providers\\RouteServiceProvider->mapWebRoutes()
+#6 [internal function]: App\\Providers\\RouteServiceProvider->map()
+#7 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#8 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(520): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#9 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): value(Object(Closure))
+#10 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(591): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(87): Illuminate\\Container\\Container->call(Array)
+#13 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#14 C:\\xampp\\htdocs\\Koperasi-Blog\\app\\Providers\\RouteServiceProvider.php(28): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#15 [internal function]: App\\Providers\\RouteServiceProvider->boot()
+#16 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#17 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(520): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): value(Object(Closure))
+#19 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(591): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(828): Illuminate\\Container\\Container->call(Array)
+#22 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(811): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#23 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 24)
+#24 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(812): array_walk(Array, Object(Closure))
+#25 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#26 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#27 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#28 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#29 C:\\xampp\\htdocs\\Koperasi-Blog\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 {main}
+"} 
+[2020-02-15 15:13:15] local.ERROR: Call to undefined method Symfony\Component\Routing\Route::get() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined method Symfony\\Component\\Routing\\Route::get() at C:\\xampp\\htdocs\\Koperasi-Blog\outes\\web.php:20)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteFileRegistrar.php(35): require()
+#1 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(415): Illuminate\\Routing\\RouteFileRegistrar->register('C:\\\\xampp\\\\htdocs...')
+#2 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(373): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
+#3 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
+#4 C:\\xampp\\htdocs\\Koperasi-Blog\\app\\Providers\\RouteServiceProvider.php(56): Illuminate\\Routing\\RouteRegistrar->group('C:\\\\xampp\\\\htdocs...')
+#5 C:\\xampp\\htdocs\\Koperasi-Blog\\app\\Providers\\RouteServiceProvider.php(40): App\\Providers\\RouteServiceProvider->mapWebRoutes()
+#6 [internal function]: App\\Providers\\RouteServiceProvider->map()
+#7 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#8 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(520): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#9 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): value(Object(Closure))
+#10 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(591): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(87): Illuminate\\Container\\Container->call(Array)
+#13 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#14 C:\\xampp\\htdocs\\Koperasi-Blog\\app\\Providers\\RouteServiceProvider.php(28): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#15 [internal function]: App\\Providers\\RouteServiceProvider->boot()
+#16 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#17 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(520): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): value(Object(Closure))
+#19 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(591): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(828): Illuminate\\Container\\Container->call(Array)
+#22 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(811): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#23 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 24)
+#24 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(812): array_walk(Array, Object(Closure))
+#25 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#26 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#27 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#28 C:\\xampp\\htdocs\\Koperasi-Blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#29 C:\\xampp\\htdocs\\Koperasi-Blog\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 {main}
+"} 
