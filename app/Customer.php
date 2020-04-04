@@ -9,14 +9,12 @@ use Illuminate\Notifications\Notifiable;
 class Customer extends Authenticatable
 {
     use Notifiable;
+    protected $fillable = ['name','email'];
+    protected $hidden = ['password'];
+    protected $table = 'customers';
     protected $guarded = [];
 
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] =bcrypt($value);
-    }
-
-
+    
     public function district()
     {
         return $this->belongsTo(District::class);
