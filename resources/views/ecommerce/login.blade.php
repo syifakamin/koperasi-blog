@@ -49,14 +49,11 @@
                                         <input type="password" class="form-control" id="password" name="password" placeholder="*****">
                                     </div>
                                     <div class="col-md-12 forn-group">
-                                        <div class="creat_account">
-                                            <input type="checkbox" id="f-option2" name="remember">
-                                            <label for="f-option2">Biarkan saya tetap masuk</label>
-                                        </div>
+                                        <br>
                                     </div>
                                     <div class="col-md-12 form-group">
-                                        <button type="submit" value="submit" class="btn submit_btn">Log in</button>
-                                        <a href="#">Lupa Password?</a>
+                                        <button type="submit" value="submit" class="btn btn-success">Log in</button>
+                                        <a href="{{ route('registerCustomers')}}" class="btn btn-warning">REGISTRASI</a>
                                     </div>
                                 </form>
                             </div>
@@ -65,3 +62,7 @@
     </div>
 </section>
 @endsection
+
+@push('js')
+<script src="{{ asset('assets/frontend/js/jquery.nice-select.min.js')}}"></script>
+@endpush

@@ -24,7 +24,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Pelanggan</div>
-                    <div class="number"> 0 </div>
+                    <div class="number"> {{$totalCustomer}} </div>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Produk</div>
-                    <div class="number"> 10 </div>
+                    <div class="number"> {{$totalProduct}} </div> 
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Kategori</div>
-                    <div class="number"> 6 </div>
+                    <div class="number"> {{$totalKategori}} </div>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Pengunjung</div>
-                    <div class="number"> 23 </div>
+                    <div class="number"> {{$totalPengunjung}} </div>
                 </div>
             </div>
         </div>

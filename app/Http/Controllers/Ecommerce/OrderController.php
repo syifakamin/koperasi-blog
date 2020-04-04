@@ -25,10 +25,10 @@ class OrderController extends Controller
         $order = Order::with(['district.city.province', 'details', 'details.product', 'payment'])
         ->where('invoice', $invoice)->first();
 
-        if (\Gate::forUser(auth()->guard('customer')->user())->allows('order-view', $order)){
-            return view('ecommerce.orders.view', compact('order'));
-        }
-
+        // if (\Gate::forUser(auth()->guard('customer')->user())->allows('order-view', $order)){
+        //     return view('ecommerce.orders.view', compact('order'));
+        // }
+        return view('ecommerce.orders.view', compact('order'));
     }
 
     public function paymentForm()
@@ -50,17 +50,17 @@ class OrderController extends Controller
 
         DB::beginTransaction();
         try {
-            //AMBIL DATA ORDER BERDASARKAN INVOICE ID
+            
             $order = Order::where('invoice', $request->invoice)->first();
-            //JIKA STATUSNYA MASIH 0 DAN ADA FILE BUKTI TRANSFER YANG DI KIRIM
+            
             if ($order->subtotal != $request->amount) return redirect()->back()->with(['error' => 'Error, Pembayaran Harus Sama Dengan Tagihan']);
             if ($order->status == 0 && $request->hasFile('proof')) {
-                //MAKA UPLOAD FILE GAMBAR TERSEBUT
+            
                 $file = $request->file('proof');
                 $filename = time() . '.' . $file->getClientOriginalExtension();
                 $file->storeAs('public/payment', $filename);
     
-                //KEMUDIAN SIMPAN INFORMASI PEMBAYARANNYA
+            
                 Payment::create([
                     'order_id' => $order->id,
                     'name' => $request->name,
@@ -70,19 +70,19 @@ class OrderController extends Controller
                     'proof' => $filename,
                     'status' => false
                 ]);
-                //DAN GANTI STATUS ORDER MENJADI 1
+            
                 $order->update(['status' => 1]);
-                //JIKA TIDAK ADA ERROR, MAKA COMMIT UNTUK MENANDAKAN BAHWA TRANSAKSI BERHASIL
+            
                 DB::commit();
-                //REDIRECT DAN KIRIMKAN PESAN
+            
                 return redirect()->back()->with(['success' => 'Pesanan Dikonfirmasi']);
             }
-            //REDIRECT DENGAN ERROR MESSAGE
+            
             return redirect()->back()->with(['error' => 'Error, Upload Bukti Transfer']);
         } catch(\Exception $e) {
-            //JIKA TERJADI ERROR, MAKA ROLLBACK SELURUH PROSES QUERY
+            
             DB::rollback();
-            //DAN KIRIMKAN PESAN ERROR
+            
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -92,9 +92,10 @@ class OrderController extends Controller
         $order = Order::with(['district.city.province', 'details', 'details.product', 'payment']) 
         ->where('invoice', $invoice)->first();
 
-        if (!\Gate::forUser(auth()->guard('customer')->user())->allows('order-view', $order)){
-            return redirect(route('customer.view_order', $order->invoice));
-        }
+        //Pencegaan hanya usernya saja yang bisa akses PDF
+        // if (!\Gate::forUser(auth()->guard('customer')->user())->allows('order-view', $order)){
+        //     return redirect(route('customer.view_order', $order->invoice));
+        // }
 
         $pdf = PDF::loadView('ecommerce.orders.pdf', compact('order'));
         return $pdf->stream();
