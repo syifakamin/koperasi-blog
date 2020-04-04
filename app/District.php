@@ -8,6 +8,6 @@ class District extends Model
 {
     public function city()
     {
-        return $this->belongsTo(City::class);
+        return $this->hasMany(City::class);
     }
 }
