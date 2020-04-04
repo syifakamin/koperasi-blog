@@ -15,6 +15,7 @@ use App\OrderDetail;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Mail;
+use Auth;
 
 class CartController extends Controller
 {
@@ -80,6 +81,12 @@ class CartController extends Controller
     $subtotal = collect($carts)->sum(function($q) {
         return $q['qty'] * $q['product_price'];
     });
+    $auth = Auth::user();
+    if(!$auth)
+    {
+        return view('ecommerce.login');
+    }
+    
     return view('ecommerce.checkout', compact('provinces','carts', 'subtotal'));
     }
 

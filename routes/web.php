@@ -57,6 +57,8 @@ Route::get('/register', function () {
 //Group Route untuk Member / Customer
  Route::group(['prefix' => 'member', 'namespace' => 'Ecommerce'], function(){
      Route::get('login', 'LoginController@loginForm')->name('customer.login');
+     Route::get('register', 'RegisterController@redirectToRegisterPage')->name('customer.register');
+     Route::post('register', 'RegisterController@postRegister')->name('customer.send.register');
      Route::get('verify/{token}', 'FrontController@verifyCustomerRegistration')->name('customer.verify');
      Route::post('login', 'LoginController@login')->name('customer.post_login');
 });
