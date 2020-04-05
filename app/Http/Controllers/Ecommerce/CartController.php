@@ -82,12 +82,14 @@ class CartController extends Controller
         return $q['qty'] * $q['product_price'];
     });
     $auth = Auth::user();
+    $auth['name'] = Auth::user()->name;
+    $auth['email'] = Auth::user()->email;
     if(!$auth)
     {
         return view('ecommerce.login');
     }
     
-    return view('ecommerce.checkout', compact('provinces','carts', 'subtotal'));
+    return view('ecommerce.checkout', compact('provinces','carts', 'subtotal','auth'));
     }
 
     public function getCity()
