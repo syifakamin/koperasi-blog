@@ -46,19 +46,20 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
-                                <div class="form-group">
+                                <div class="form-group clearfix">
                                     <label for="status">Status</label>
-                                    <select name="status" class="form-control" required>
-                                        <option value="1" {{ old('status') == '1' ? 'selected':'' }}>Publish</option>
-                                        <option value="0" {{ old('status') == '0' ? 'selected':'' }}>Draft</option>
-                                    </select>
+                                    <div class="form-control show-tick">
+                                        <select name="status" class="show-tick clearfix filter-option pull-right" required>
+                                            <option value="1" {{ old('status') == '1' ? 'selected':'' }}>Publish</option>
+                                            <option value="0" {{ old('status') == '0' ? 'selected':'' }}>Draft</option>
+                                        </select>
+                                    </div>
                                     <p class="text-danger">{{ $errors->first('status') }}</p>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group clearfix">
                                     <label for="category_id">Kategori</label>
-                                    
                                     <!-- DATA KATEGORI DIGUNAKAN DISINI, SEHINGGA SETIAP PRODUK USER BISA MEMILIH KATEGORINYA -->
-                                    <select name="category_id" class="form-control">
+                                    <select name="category_id" class="show-tick clearfix filter-option form-control show-tick">
                                         <option value="">Pilih</option>
                                         @foreach ($category as $row)
                                         <option value="{{ $row->id }}" {{ old('category_id') == $row->id ? 'selected':'' }}>{{ $row->name }}</option>
@@ -66,19 +67,26 @@
                                     </select>
                                     <p class="text-danger">{{ $errors->first('category_id') }}</p>
                                 </div>
+
+                                <!-- dummy -->
+                                <div class="form-group clearfix">
+                                        <label for=dummy">   </label>
+                                </div>
+                                <!-- dummy -->
+
                                 <div class="form-group">
                                     <label for="price">Harga</label>
-                                    <input type="number" name="price" class="form-control" value="{{ old('price') }}" required>
+                                    <input type="number" name="price" class="form-line" value="{{ old('price') }}" required>
                                     <p class="text-danger">{{ $errors->first('price') }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="weight">Berat</label>
-                                    <input type="number" name="weight" class="form-control" value="{{ old('weight') }}" required>
+                                    <input type="number" name="weight" class="form-line" value="{{ old('weight') }}" required>
                                     <p class="text-danger">{{ $errors->first('weight') }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="image">Foto Produk</label>
-                                    <input type="file" name="image" class="form-control" value="{{ old('image') }}" required>
+                                    <input type="file" name="image" class="form-line" value="{{ old('image') }}" required>
                                     <p class="text-danger">{{ $errors->first('image') }}</p>
                                 </div>
                                 <div class="form-group">

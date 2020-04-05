@@ -69,3 +69,7 @@
 		</div>
 	</section>
 @endsection
+
+@push('js')
+<script src="{{ asset('assets/frontend/js/jquery.nice-select.min.js')}}"></script>
+@endpush

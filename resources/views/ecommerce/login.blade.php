@@ -56,6 +56,7 @@
         </div>
     </div>
 </section>
+<<<<<<< HEAD
 <script src="{{ asset('assets/frontend/js/jquery-3.2.1.min.js') }}"></script>
 	<script src="{{ asset('assets/frontend/js/popper.js') }}"></script>
 	<script src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
@@ -94,3 +95,10 @@
  
 </body>
 </html>
+=======
+@endsection
+
+@push('js')
+<script src="{{ asset('assets/frontend/js/jquery.nice-select.min.js')}}"></script>
+@endpush
+>>>>>>> 035d7824b3e9fa6104008bb1b8ce730f8b4f65e2

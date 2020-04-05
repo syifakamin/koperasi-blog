@@ -104,6 +104,7 @@
 @endsection
 
 @section('js')
+<script src="{{ asset('assets/frontend/js/jquery.nice-select.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script>
         $('#transfer_date').datepicker({
