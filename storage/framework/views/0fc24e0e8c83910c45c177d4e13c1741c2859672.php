@@ -40,8 +40,8 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">Product</th>
-                                <th scope="col">Price</th>
+                                <th scope="col">Produk</th>
+                                <th scope="col">Harga</th>
                                 <th scope="col">Quantity</th>
                                 <th scope="col">Total</th>
                             </tr>
@@ -53,8 +53,8 @@
                             <tr>
                                 <td>
                                     <div class="media">
-                                        <div class="d-flex">
-                                            <img src="<?php echo e(asset('storage/products/' .$row['product_image'])); ?>" width="100px" height="100px" alt="<?php echo e($row['product_name']); ?>">
+                                        <div class="d-flex" style="max-width: 10%;">
+                                            <img src="<?php echo e(asset('storage/products/' .$row['product_image'])); ?>" width="auto" height="auto" alt="<?php echo e($row['product_name']); ?>">
                                         </div>
                                         <div class="media-body">
                                             <p><?php echo e($row['product_name']); ?></p>
@@ -66,10 +66,8 @@
                                 </td>
                                 <td>
                                     <div class="product_count">
-                    <!-- PERHATIKAN BAGIAN INI, NAMENYA KITA GUNAKAN ARRAY AGAR BISA MENYIMPAN LEBIH DARI 1 DATA -->
                      					<input type="text" name="qty[]" id="sst<?php echo e($row['product_id']); ?>" maxlength="12" value="<?php echo e($row['qty']); ?>" title="Quantity:" class="input-text qty">
                                         <input type="hidden" name="product_id[]" value="<?php echo e($row['product_id']); ?>" class="form-control"> 
-                    <!-- PERHATIKAN BAGIAN INI, NAMENYA KITA GUNAKAN ARRAY AGAR BISA MENYIMPAN LEBIH DARI 1 DATA -->
 										<button onclick="var result = document.getElementById('sst<?php echo e($row['product_id']); ?>'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 										 class="increase items-count" type="button">
 											<i class="lnr lnr-chevron-up"></i>
@@ -92,7 +90,7 @@
 							<?php endif; ?>
 							<tr class="bottom_button">
 								<td>
-									<button class="btn btn-primary waves-effect">Update Cart</button>
+									<button class="btn btn-primary waves-effect">Update</button>
 								</td>
 								<td></td>
 								<td></td>
@@ -113,15 +111,14 @@
                                     <h5>Rp <?php echo e(number_format($subtotal)); ?></h5>
 								</td>
 							</tr>
-							
 							<tr class="out_button_area">
 								<td></td>
 								<td></td>
 								<td></td>
 								<td>
 									<div class="checkout_btn_inner">
-										<a class="btn btn-secondary waves-effect" href="<?php echo e(route('front.product')); ?>">Continue Shopping</a>
-										<a class="btn btn-success waves-effect" href="<?php echo e(route('front.checkout')); ?>">Proceed to checkout</a>
+										<a class="btn btn-secondary waves-effect" href="<?php echo e(route('front.product')); ?>">Kembali Belanja</a>
+										<a class="btn btn-success waves-effect" href="<?php echo e(route('front.checkout')); ?>">Checkout</a>
 									</div>
 								</td>
 							</tr>
@@ -132,13 +129,11 @@
         </div>
     </section>
     <!--================End Cart Area =================-->
-
-
 <?php $__env->stopSection(); ?>
 
 
 <?php $__env->startPush('js'); ?>
-
+<script src="<?php echo e(asset('assets/frontend/js/jquery.nice-select.min.js')); ?>"></script>
 <?php $__env->stopPush(); ?>
 
 <?php echo $__env->make('layouts.frontend.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/koperasi/resources/views/ecommerce/cart.blade.php ENDPATH**/ ?>

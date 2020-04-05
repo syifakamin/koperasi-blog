@@ -10,7 +10,7 @@
 <?php $__env->stopPush(); ?>
 
 <?php $__env->startSection('content'); ?>
-
+ 
 
 	<!-- start banner Area -->
 	<section class="banner-area">
@@ -114,6 +114,7 @@
 
 <script src="<?php echo e(asset('assets/frontend/js/home/scripts.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/frontend/js/home/swiper.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/frontend/js/jquery.nice-select.min.js')); ?>"></script>
 <script $(document).ready(function(){
   $(".owl-carousel").owlCarousel();
 });

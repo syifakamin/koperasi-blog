@@ -56,7 +56,6 @@
         </div>
     </div>
 </section>
-<<<<<<< HEAD
 <script src="<?php echo e(asset('assets/frontend/js/jquery-3.2.1.min.js')); ?>"></script>
 	<script src="<?php echo e(asset('assets/frontend/js/popper.js')); ?>"></script>
 	<script src="<?php echo e(asset('assets/frontend/js/bootstrap.min.js')); ?>"></script>
@@ -95,11 +94,4 @@
  
 </body>
 </html>
-=======
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startPush('js'); ?>
-<script src="<?php echo e(asset('assets/frontend/js/jquery.nice-select.min.js')); ?>"></script>
-<?php $__env->stopPush(); ?>
->>>>>>> 035d7824b3e9fa6104008bb1b8ce730f8b4f65e2
 <?php /**PATH /var/www/html/koperasi/resources/views/ecommerce/login.blade.php ENDPATH**/ ?>
