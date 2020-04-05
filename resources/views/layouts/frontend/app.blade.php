@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="en" class="no-js">
 
 <head>
 	<!-- Mobile Specific Meta -->
@@ -9,9 +9,9 @@
 	<!-- Author Meta -->
 	<meta name="author" content="CodePixar">
 	<!-- Meta Description -->
-	<meta name="description" content="">
+	<meta name="description" content="Koperasi sinar mentari UMG Gresik Jawa Timur">
 	<!-- Meta Keyword -->
-	<meta name="keywords" content="">
+	<meta name="keywords" content="Koperasi, Indonesia, Koperasi Indonesia, Ecommerce, Sale, Jawa Timur, Gresik, Produk">
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
