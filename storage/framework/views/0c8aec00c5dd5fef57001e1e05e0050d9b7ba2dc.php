@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="en" class="no-js">
 
 <head>
 	<!-- Mobile Specific Meta -->
@@ -9,9 +9,9 @@
 	<!-- Author Meta -->
 	<meta name="author" content="CodePixar">
 	<!-- Meta Description -->
-	<meta name="description" content="">
+	<meta name="description" content="Koperasi sinar mentari UMG Gresik Jawa Timur">
 	<!-- Meta Keyword -->
-	<meta name="keywords" content="">
+	<meta name="keywords" content="Koperasi, Indonesia, Koperasi Indonesia, Ecommerce, Sale, Jawa Timur, Gresik, Produk">
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
@@ -41,6 +41,7 @@
 		    CSS
 			  ============================================= -->
 		  <link rel="stylesheet" href="<?php echo e(asset('assets/frontend/css/owl.theme.default.min.css')); ?>">
+		  <link rel="stylesheet" href="<?php echo e(asset('assets/frontend/css/nice-select.css')); ?>">
           <link rel="stylesheet" href="<?php echo e(asset('assets/frontend/css/linearicons.css')); ?>">
           <link rel="stylesheet" href="<?php echo e(asset('assets/frontend/css/font-awesome.min.css')); ?>">
           <link rel="stylesheet" href="<?php echo e(asset('assets/frontend/css/themify-icons.css')); ?>">
@@ -101,6 +102,9 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="<?php echo e(asset('assets/frontend/js/gmaps.min.js')); ?>"></script>
 	<script src="<?php echo e(asset('assets/frontend/js/main.js')); ?>"></script>
+
+	<!-- mengaktifkan fungsi header dinamis -->
+	
 	<!-- <script src="<?php echo e(asset('assets/frontend/js/jquery.nice-select.min.js')); ?>"></script> -->
 	<?php echo $__env->yieldPushContent('js'); ?>
 	

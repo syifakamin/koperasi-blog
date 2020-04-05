@@ -26,6 +26,7 @@ class RegisterController extends Controller
         $customer->password = bcrypt($request->password);
         $customer->save();
 
+         
         return redirect()->route('customer.login');
 
     }

@@ -31,7 +31,7 @@
                 @endif
                 <div class="login_form_inner">
                     <h3>Masuk</h3>
-                    <form class="row login_form" action="{{ route('customer.post_login') }}" method="post" id="contactForm" novalidate="novalidate">
+                    <form class="row login_form" action="{{ url('member/login') }}" method="post" id="contactForm" novalidate="novalidate">
                         @csrf
                         <div class="col-md-12 form-group">
                             <input type="email" class="form-control" id="email" name="email" placeholder="Alamat Email">

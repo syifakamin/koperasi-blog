@@ -3,5 +3,6 @@
         "ajaxchimp",
         "gmaps",
         "linearicons"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }

@@ -14,7 +14,7 @@ class LoginController extends Controller
     }
     public function loginForm()
     {
-        if(auth()->guard('customer')->check()) return redirect(route('customer.dashboard'));
+        
         return view('ecommerce.login');
     }
 
@@ -26,15 +26,22 @@ class LoginController extends Controller
             'password' => 'required|string'
         ]);
 
-        $auth = $request->only('email', 'password');
+        $auth = [
+            "email" => $request->email,
+            "password" => $request->password
+        ];
         // $auth['status'] = 1;
-
-        if (Auth::attempt($auth)) {
+        
+        // dd($auth);
+        
+        if (Auth::guard("customer")->attempt($auth)) {
             
-            return redirect()->intended(route('front.index'));
+            return redirect()->intended(route('customer.dashboard'));
         }
-
-        return redirect()->back()->with(['error' => 'Email / Password anda Salah']);
+        else{
+            return redirect()->back()->with(['error' => 'Email / Password anda Salah']);
+        }
+        
     }
 
     public function dashboard()
@@ -44,7 +51,7 @@ class LoginController extends Controller
         COALESCE(count(CASE WHEN status = 4 THEN subtotal END), 0) as completeOrder')
         ->where('customer_id', auth()->guard('customer')->user()->id)->get();
 
-         return view('ecommerce.dashboard', compact('orders'));
+         return view('customer.dashboard', compact('orders'));
     }
 
     public function logout()

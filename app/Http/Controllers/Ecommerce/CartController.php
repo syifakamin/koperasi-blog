@@ -82,8 +82,8 @@ class CartController extends Controller
         return $q['qty'] * $q['product_price'];
     });
     $auth = Auth::user();
-    $auth['name'] = Auth::user()->name;
-    $auth['email'] = Auth::user()->email;
+    $auth['name'] = Auth::user()['name'];
+    $auth['email'] = Auth::user()['email'];
     if(!$auth)
     {
         return view('ecommerce.login');
