@@ -24,7 +24,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Pelanggan</div>
-                    <div class="number"> 0 </div>
+                    <div class="number"> <?php echo e($totalCustomer); ?> </div>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Produk</div>
-                    <div class="number"> 10 </div>
+                    <div class="number"> <?php echo e($totalProduct); ?> </div> 
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Kategori</div>
-                    <div class="number"> 6 </div>
+                    <div class="number"> <?php echo e($totalKategori); ?> </div>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="content">
                     <div class="text">Total Pengunjung</div>
-                    <div class="number"> 23 </div>
+                    <div class="number"> <?php echo e($totalPengunjung); ?> </div>
                 </div>
             </div>
         </div>
