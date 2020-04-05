@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Ecommerce;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
-
+use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
     public function loginForm()
     {
         if(auth()->guard('customer')->check()) return redirect(route('customer.dashboard'));
@@ -23,10 +27,11 @@ class LoginController extends Controller
         ]);
 
         $auth = $request->only('email', 'password');
-        $auth['status'] = 1;
+        // $auth['status'] = 1;
 
-        if (auth()->guard('customer')->attempt($auth)) {
-            return redirect()->intended(route('customer.dashboard'));
+        if (Auth::attempt($auth)) {
+            
+            return redirect()->intended(route('front.index'));
         }
 
         return redirect()->back()->with(['error' => 'Email / Password anda Salah']);
