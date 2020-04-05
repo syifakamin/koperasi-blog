@@ -42,7 +42,7 @@
                         @csrf
                         <div class="col-md-12 form-group p_star">
                             <label for="">Nama Lengkap</label>
-                            <input type="text" class="form_control" id="first" name="customer_name" required>
+                            <input type="text" class="form_control" id="first" name="customer_name" value="{{ $auth['name'] }}" required>
 
                             <!-- untuk menampilkan jika terdapat error validasi -->
                             <p class="text-danger">{{ $errors->first('customer_name')}}</p>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-md-6 form-group p_star">
                             <label for="">E-Mail</label>
-                            <input type="email" class="form-control" id="email" name="email" require>
+                            <input type="email" class="form-control" id="email" name="email" value="{{ $auth['email'] }}" required>
                             <p class="text-danger">{{ $errors->first('email')}} </p>
                         </div>
                         <div class="col-md-12 form-group p_star">

@@ -19,7 +19,7 @@
   						<h4 class="title"><b>SPECIAL PAGES</b></h4>
   						<ul>
   							<li><a href="<?php echo e(route('login')); ?>">ADMIN LOGIN</a></li>
-  							<li><a href="<?php echo e(route('register')); ?>">ADMIN REGISTER</a></li>
+  							<!-- <li><a href="<?php echo e(route('register')); ?>">ADMIN REGISTER</a></li> -->
   						</ul>
   					</div><!-- footer-section -->
 				  </div><!-- col-lg-4 col-md-6 -->

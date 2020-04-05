@@ -18,11 +18,6 @@
 	<link rel="stylesheet" href="<?php echo e(asset('assets/frontend/css/main.css')); ?>">
 </head>
 <body>
-<section id="title">
-
-  
-
-</section>
 <section class="blog-area section">
 <br><br><br>
 <div class="container">

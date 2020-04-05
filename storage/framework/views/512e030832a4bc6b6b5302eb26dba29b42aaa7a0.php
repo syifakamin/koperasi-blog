@@ -41,6 +41,7 @@
 		    CSS
 			  ============================================= -->
 		  <link rel="stylesheet" href="<?php echo e(asset('assets/frontend/css/owl.theme.default.min.css')); ?>">
+		  <link rel="stylesheet" href="<?php echo e(asset('assets/frontend/css/nice-select.css')); ?>">
           <link rel="stylesheet" href="<?php echo e(asset('assets/frontend/css/linearicons.css')); ?>">
           <link rel="stylesheet" href="<?php echo e(asset('assets/frontend/css/font-awesome.min.css')); ?>">
           <link rel="stylesheet" href="<?php echo e(asset('assets/frontend/css/themify-icons.css')); ?>">
@@ -101,6 +102,9 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="<?php echo e(asset('assets/frontend/js/gmaps.min.js')); ?>"></script>
 	<script src="<?php echo e(asset('assets/frontend/js/main.js')); ?>"></script>
+
+	<!-- mengaktifkan fungsi header dinamis -->
+	
 	<!-- <script src="<?php echo e(asset('assets/frontend/js/jquery.nice-select.min.js')); ?>"></script> -->
 	<?php echo $__env->yieldPushContent('js'); ?>
 	

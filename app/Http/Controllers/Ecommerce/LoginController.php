@@ -5,27 +5,33 @@ namespace App\Http\Controllers\Ecommerce;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
-
+use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
     public function loginForm()
     {
-        if (auth()->guard('customer')->check()) return redirect(route('customer.dashboard'));
+        if(auth()->guard('customer')->check()) return redirect(route('customer.dashboard'));
         return view('ecommerce.login');
     }
 
     public function login(Request $request)
     {
+        
         $this->validate($request, [
             'email' => 'required|email|exists:customers,email',
             'password' => 'required|string'
         ]);
 
         $auth = $request->only('email', 'password');
-        $auth['status'] = 1;
+        // $auth['status'] = 1;
 
-        if (auth()->guard('customer')->attempt($auth)) {
-            return redirect()->intended(route('customer.dashboard'));
+        if (Auth::attempt($auth)) {
+            
+            return redirect()->intended(route('front.index'));
         }
 
         return redirect()->back()->with(['error' => 'Email / Password anda Salah']);
