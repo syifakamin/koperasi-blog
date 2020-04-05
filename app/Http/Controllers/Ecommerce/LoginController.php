@@ -26,10 +26,13 @@ class LoginController extends Controller
             'password' => 'required|string'
         ]);
 
-        $auth = $request->only('email', 'password');
+        $auth = [
+            "email" => $request->email,
+            "password" => $request->password
+        ];
         // $auth['status'] = 1;
 
-        if (Auth::attempt($auth)) {
+        if (Auth::guard("customer")->attempt($auth)) {
             
             return redirect()->intended(route('front.index'));
         }

@@ -61,7 +61,7 @@
 							</li>
 							<li>
 								<a href="#">
-                  <span>Kota</span> : {{ $order->district->city->name }}</a>
+                  <span>Kota</span> : {{ $cityName }}</a>
 							</li>
 							<li>
 								<a href="#">
@@ -69,9 +69,7 @@
 							</li>
 						</ul>
 						<th><a href="{{ route('customer.order_pdf', $order->invoice) }}" target="_blank"><strong>{{$order->invoice}}</strong></a></th>
-						<!-- <br>
-						<h2>Hai, {{ $customer->name }}</h2>
-					    <p>Terima Kasih telah melakukan transaksi pada aplikasi kami, berikut password anda: <strong>{{ $password }}</strong></p> -->
+						
 					</div>
 				</div>
 			</div>

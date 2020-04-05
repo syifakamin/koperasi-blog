@@ -42,7 +42,7 @@
                         <?php echo csrf_field(); ?>
                         <div class="col-md-12 form-group p_star">
                             <label for="">Nama Lengkap</label>
-                            <input type="text" class="form_control" id="first" name="customer_name" value="<?php echo e($auth['name']); ?>" required>
+                            <input type="text" class="form-control" id="first" name="customer_name" value="<?php echo e($auth['name']); ?>" required>
 
                             <!-- untuk menampilkan jika terdapat error validasi -->
                             <p class="text-danger"><?php echo e($errors->first('customer_name')); ?></p>
