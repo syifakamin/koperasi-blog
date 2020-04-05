@@ -10,12 +10,13 @@ class LoginController extends Controller
 {
     public function loginForm()
     {
-        if (auth()->guard('customer')->check()) return redirect(route('customer.dashboard'));
+        if(auth()->guard('customer')->check()) return redirect(route('customer.dashboard'));
         return view('ecommerce.login');
     }
 
     public function login(Request $request)
     {
+        
         $this->validate($request, [
             'email' => 'required|email|exists:customers,email',
             'password' => 'required|string'
