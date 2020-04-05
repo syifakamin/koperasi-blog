@@ -42,7 +42,7 @@
                         @csrf
                         <div class="col-md-12 form-group p_star">
                             <label for="">Nama Lengkap</label>
-                            <input type="text" class="form_control" id="first" name="customer_name" value="{{ $auth['name'] }}" required>
+                            <input type="text" class="form-control" id="first" name="customer_name" value="{{ $auth['name'] }}" required>
 
                             <!-- untuk menampilkan jika terdapat error validasi -->
                             <p class="text-danger">{{ $errors->first('customer_name')}}</p>

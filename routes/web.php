@@ -25,7 +25,7 @@ Route::post('/cart/update', 'Ecommerce\CartController@updateCart')->name('front.
 Route::get('/contact', 'Ecommerce\Contact@index')->name('front.contact');
 Route::get('/checkout', 'Ecommerce\CartController@checkout')->name('front.checkout');
 Route::get('api/city', 'Ecommerce\CartController@getCity');
-Route::get('api/district', 'Ecommerce\cartController@getDistrict');
+Route::get('api/district', 'Ecommerce\CartController@getDistrict');
 route::post('/checkout', 'Ecommerce\CartController@prosesCheckout')->name('front.store_checkout');
 
 

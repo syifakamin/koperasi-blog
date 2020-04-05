@@ -81,14 +81,14 @@ class CartController extends Controller
     $subtotal = collect($carts)->sum(function($q) {
         return $q['qty'] * $q['product_price'];
     });
-    $auth = Auth::user();
-    $auth['name'] = Auth::user()->name;
-    $auth['email'] = Auth::user()->email;
+    
     if(!$auth)
     {
         return view('ecommerce.login');
     }
-    
+    $auth = Auth::user();
+    $auth['name'] = Auth::user()->name;
+    $auth['email'] = Auth::user()->email;
     return view('ecommerce.checkout', compact('provinces','carts', 'subtotal','auth'));
     }
 
@@ -122,9 +122,9 @@ class CartController extends Controller
 
         try{
             $customer = Customer::where('email', $request->email)->first();
-            if (!auth()->check() && $customer){
-                return redirect()->back()->with(['error' => 'Silahkan login terlebih dahulu']);
-            }
+            $customer->phone_number = $request->customer_phone;
+            $customer->address = $request->customer_address;
+            $customer->save();
             $carts = $this->getCarts();
             $subtotal = collect($carts)->sum(function($q){
                 return $q['qty'] * $q['product_price'];
@@ -185,8 +185,13 @@ class CartController extends Controller
 
     public function checkoutFinish($invoice)
     {
-        $order = Order::with(['district.city'])->where('invoice', $invoice)->first();
-        return view('ecommerce.checkout_finish', compact('order'));
+        $order = Order::where('invoice', $invoice)->first();
+        $district = District::where('id',$order->district_id)->first();
+        $city_id = $district->city_id;
+        $city = City::where('id',$city_id)->first();
+        $cityName = $city->name;
+        // dd($cityName);
+        return view('ecommerce.checkout_finish', compact('order', 'cityName'));
     } 
 
     public function verifyCustomerRegistration($token)
