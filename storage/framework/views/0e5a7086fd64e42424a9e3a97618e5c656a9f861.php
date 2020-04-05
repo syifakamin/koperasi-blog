@@ -21,7 +21,7 @@
 							<li class="nav-item"><a class="nav-link" href="<?php echo e(route('front.list_cart')); ?>"> belanjaMu </a></li>
 							<?php if(auth()->guard('customer')->check()): ?>
 							<li class="nav-item"><a class="nav-link" href="<?php echo e(route ('customer.logout')); ?>">logout</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">My Account</a></li>
+							<li class="nav-item"><a class="nav-link" href="<?php echo e(route('customer.dashboard')); ?>">My Account</a></li>
 							<?php else: ?>
 							<li class="nav-item"><a class="nav-link" href="<?php echo e(route('customer.login')); ?>"> Login Customer </a></li>
 							<?php endif; ?>

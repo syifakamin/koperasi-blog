@@ -68,6 +68,10 @@
 									<span>Country</span> : Indonesia</a>
 							</li>
 						</ul>
+						<th><a href="{{ route('customer.order_pdf', $order->invoice) }}" target="_blank"><strong>{{$order->invoice}}</strong></a></th>
+						<!-- <br>
+						<h2>Hai, {{ $customer->name }}</h2>
+					    <p>Terima Kasih telah melakukan transaksi pada aplikasi kami, berikut password anda: <strong>{{ $password }}</strong></p> -->
 					</div>
 				</div>
 			</div>
@@ -80,5 +84,5 @@
 
 
 @push('js')
-
+<script src="{{ asset('assets/frontend/js/jquery.nice-select.min.js')}}"></script>
 @endpush

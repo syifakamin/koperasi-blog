@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="header bg-blue">
+                        <div class="header bg-blue button-demo">
                             <h4>
                                 List Product
 
@@ -29,7 +29,7 @@
                             </h4>
                         </div>
                         <div class="card-body">
-                            <!-- JIKA TERDAPAT FLASH SESSION, MAKA TAMPILAKAN -->
+                            
                             @if (session('success'))
                                 <div class="alert alert-success">{{ session('success') }}</div>
                             @endif
@@ -37,20 +37,20 @@
                             @if (session('error'))
                                 <div class="alert alert-danger">{{ session('error') }}</div>
                             @endif
-                            <!-- JIKA TERDAPAT FLASH SESSION, MAKA TAMPILAKAN -->
+                            
 
-                            <!-- BUAT FORM UNTUK PENCARIAN, METHODNYA ADALAH GET -->
+                            
                             <form action="{{ route('product.index') }}" method="get">
                                 <div class="input-group mb-3 col-md-3 float-right">
-                                    <!-- KEMUDIAN NAME-NYA ADALAH Q YANG AKAN MENAMPUNG DATA PENCARIAN -->
+                            
                                     <input type="text-placeholder" name="q" class="form-control" placeholder="Cari..." value="{{ request()->q }}">
                                         <button class="btn btn-secondary pull-right col-md-12" type="button">Cari</button>
                                 </div>
                             </form>
                           
-                            <!-- TABLE UNTUK MENAMPILKAN DATA PRODUK -->
-                            <div class="table-responsive">
-                                <table class="table table-hover table-bordered">
+                            
+                            <div class="table-striped">
+                                <table class="table table-hover table-striped table-bordered" >
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -62,33 +62,36 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- LOOPING DATA TERSEBUT MENGGUNAKAN FORELSE -->
-                                        <!-- ADAPUN PENJELASAN ADA PADA ARTIKEL SEBELUMNYA -->
+                                        
                                         @forelse ($product as $row)
                                         <tr>
                                             <td>
-                                                <!-- TAMPILKAN GAMBAR DARI FOLDER PUBLIC/STORAGE/PRODUCTS -->
-                                                <img src="{{asset('storage/products/' . $row->image) }}" width="100px" height="100px" alt="{{ $row->name }}">
+                                                
+                                                <div style="max-width: 20%;">
+                                                <img src="{{asset('storage/products/' . $row->image) }}" width="auto" height="auto" alt="{{ $row->name }}">
+                                                </div>
                                             </td>
                                             <td>
                                                 <strong>{{ $row->name }}</strong><br>
-                                                <!-- ADAPUN NAMA KATEGORINYA DIAMBIL DARI HASIL RELASI PRODUK DAN KATEGORI -->
+                                                
                                                 <label>Kategori: <span class="badge badge-info">{{ $row->category->name }}</span></label><br>
                                                 <label>Berat: <span class="badge badge-info">{{ $row->weight }} gr</span></label>
                                             </td>
                                             <td>Rp {{ number_format($row->price) }}</td>
                                             <td>{{ $row->created_at->format('d-m-Y') }}</td>
                                             
-                                            <!-- KARENA BERISI HTML MAKA KITA GUNAKAN { !! UNTUK MENCETAK DATA -->
+                                            
                                             <td>{!! $row->status_label !!}</td>
                                             <td>
-                                                <!-- FORM UNTUK MENGHAPUS DATA PRODUK -->
+                                                
+                                                <div class="button-demo">
                                                 <form action="{{ route('product.destroy', $row->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <a href="{{ route('product.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                                     <button class="btn btn-danger btn-sm">Hapus</button>
                                                 </form>
+                                                </div>
                                             </td>
                                         </tr>
                                         @empty
@@ -99,7 +102,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- MEMBUAT LINK PAGINASI JIKA ADA -->
+                            
                             {!! $product->links() !!}
                         </div>
                     </div>
